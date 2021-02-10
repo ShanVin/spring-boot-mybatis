@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: spring-boot-mybatis
+  messages:
+    encoding: UTF-8
+  datasource:
+    druid:
+      mysql:
+        url: jdbc:mysql://127.0.0.1:3306/project
+        username: shanvin
+        password: Project3306!
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        db-type: com.alibaba.druid.pool.DruidDataSource
+        initial-size: 5
+        min-idle: 5
+        max-active: 10
+        max-wait: 10000
+        validation-query: select 1 from dual
+        validation-query-timeout: 10000
+        min-evictable-idle-time-millis: 60000
+        time-between-eviction-runs-millis: 60000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-open-prepared-statements: 20
+        filter:
+          stat:
+            log-slow-sql: true
+            merge-sql: true
+            slow-sql-millis: 3000
+
+server:
+  port: 9031
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    basedir: ../tomcat/${server.port}
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mysql/*.xml
+  check-config-location: true

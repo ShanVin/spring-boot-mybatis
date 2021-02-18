@@ -6,7 +6,7 @@ spring:
   datasource:
     druid:
       mysql:
-        url: jdbc:mysql://127.0.0.1:3306/project
+        url: jdbc:mysql://192.168.47.128:3306/project
         username: shanvin
         password: Project3306!
         driver-class-name: com.mysql.cj.jdbc.Driver
